@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PPL Program">
+<title>Mon Programme</title>
+
+<!-- App Icon (SVG → base64) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIzOCIgZmlsbD0iIzBkMGQwZCIvPgogIDxyZWN0IHg9IjI0IiB5PSI3OCIgd2lkdGg9IjEzMiIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSIjZThkZjQ3Ii8+CiAgPGNpcmNsZSBjeD0iMzgiIGN5PSI5MCIgcj0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZmY0NyIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPGNpcmNsZSBjeD0iMTQyIiBjeT0iOTAiIHI9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNlOGZmNDciIHN0cm9rZS13aWR0aD0iOCIvPgogIDxyZWN0IHg9IjE0IiB5PSI4MiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iI2U4ZmY0NyIvPgogIDxyZWN0IHg9IjE1MCIgeT0iODIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcng9IjgiIGZpbGw9IiNlOGZmNDciLz4KICA8dGV4dCB4PSI5MCIgeT0iMTQyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNlOGZmNDciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5QUEw8L3RleHQ+Cjwvc3ZnPg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIzOCIgZmlsbD0iIzBkMGQwZCIvPgogIDxyZWN0IHg9IjI0IiB5PSI3OCIgd2lkdGg9IjEzMiIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSIjZThkZjQ3Ii8+CiAgPGNpcmNsZSBjeD0iMzgiIGN5PSI5MCIgcj0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZmY0NyIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPGNpcmNsZSBjeD0iMTQyIiBjeT0iOTAiIHI9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNlOGZmNDciIHN0cm9rZS13aWR0aD0iOCIvPgogIDxyZWN0IHg9IjE0IiB5PSI4MiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iI2U4ZmY0NyIvPgogIDxyZWN0IHg9IjE1MCIgeT0iODIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcng9IjgiIGZpbGw9IiNlOGZmNDciLz4KICA8dGV4dCB4PSI5MCIgeT0iMTQyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNlOGZmNDciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5QUEw8L3RleHQ+Cjwvc3ZnPg==">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --bg2: #1a1a1a;
+    --bg3: #222;
+    --accent: #e8ff47;
+    --push: #ff6b35;
+    --pull: #47b3ff;
+    --legs: #b47bff;
+    --green: #47ffb3;
+    --rest: #555;
+    --text: #f0f0f0;
+    --muted: #666;
+    --border: #2a2a2a;
+    --radius: 16px;
+    --safe-bottom: env(safe-area-inset-bottom, 20px);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body {
+    font-family:'DM Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    padding-bottom:calc(80px + var(--safe-bottom));
+    overscroll-behavior:none;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    position:sticky; top:0; z-index:100;
+    background:rgba(15,15,15,0.96);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    padding:52px 20px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .top-label { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-bottom:2px; }
+  .top-title { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:1px; display:flex; align-items:center; gap:10px; padding-bottom:10px; }
+  .top-badge { font-family:'DM Mono',monospace; font-size:10px; background:rgba(232,255,71,0.12); color:var(--accent); padding:3px 8px; border-radius:20px; border:1px solid rgba(232,255,71,0.2); }
+
+  /* ── DAY SCROLLER ── */
+  .day-scroll-wrap {
+    overflow-x:auto; padding:12px 20px; display:flex; gap:8px;
+    scrollbar-width:none; -ms-overflow-style:none;
+    background:rgba(15,15,15,0.9); margin:0 -20px;
+  }
+  .day-scroll-wrap::-webkit-scrollbar { display:none; }
+  .day-pill {
+    display:flex; flex-direction:column; align-items:center; gap:3px;
+    flex-shrink:0; padding:8px 14px; border-radius:50px;
+    background:var(--bg2); border:1.5px solid var(--border);
+    cursor:pointer; transition:all 0.2s; min-width:64px;
+  }
+  .day-pill.active-push { background:rgba(255,107,53,0.15); border-color:var(--push); }
+  .day-pill.active-pull { background:rgba(71,179,255,0.15); border-color:var(--pull); }
+  .day-pill.active-legs { background:rgba(180,123,255,0.15); border-color:var(--legs); }
+  .day-pill.active-rest { background:rgba(80,80,80,0.2); border-color:var(--rest); }
+  .pill-day { font-family:'DM Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .pill-type { font-family:'Bebas Neue',sans-serif; font-size:15px; }
+  .day-pill.active-push .pill-type { color:var(--push); }
+  .day-pill.active-pull .pill-type { color:var(--pull); }
+  .day-pill.active-legs .pill-type { color:var(--legs); }
+  .day-pill.active-rest .pill-type { color:var(--rest); }
+  .day-pill:not([class*="active"]) .pill-type { color:var(--muted); }
+
+  /* ── PAGES ── */
+  .page { display:none; padding:16px; }
+  .page.active { display:block; }
+
+  /* ── SESSION HEADER ── */
+  .page-header {
+    display:flex; align-items:flex-start; justify-content:space-between;
+    margin-bottom:16px; padding:20px; border-radius:var(--radius); border:1px solid var(--border);
+  }
+  .ph-push { background:linear-gradient(135deg,rgba(255,107,53,0.12),rgba(255,107,53,0.04)); border-color:rgba(255,107,53,0.25); }
+  .ph-pull { background:linear-gradient(135deg,rgba(71,179,255,0.12),rgba(71,179,255,0.04)); border-color:rgba(71,179,255,0.25); }
+  .ph-legs { background:linear-gradient(135deg,rgba(180,123,255,0.12),rgba(180,123,255,0.04)); border-color:rgba(180,123,255,0.25); }
+  .ph-rest { background:linear-gradient(135deg,rgba(80,80,80,0.1),rgba(80,80,80,0.02)); border-color:rgba(80,80,80,0.2); }
+  .ph-left { flex:1; }
+  .ph-tag { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px; }
+  .push-col { color:var(--push); } .pull-col { color:var(--pull); } .legs-col { color:var(--legs); } .rest-col { color:var(--rest); }
+  .ph-title { font-family:'Bebas Neue',sans-serif; font-size:30px; line-height:1; margin-bottom:6px; }
+  .ph-sub { font-size:12px; color:var(--muted); }
+  .ph-right { font-family:'Bebas Neue',sans-serif; font-size:42px; line-height:1; opacity:.12; margin-left:12px; }
+
+  /* ── EXERCISE CARD ── */
+  .exo-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:12px; overflow:hidden; }
+  .exo-top { padding:16px 16px 12px; border-bottom:1px solid var(--border); }
+  .exo-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:4px; }
+  .exo-name { font-size:16px; font-weight:700; line-height:1.3; margin-bottom:6px; }
+  .exo-tag { display:inline-block; font-size:10px; background:rgba(255,255,255,0.06); color:var(--muted); padding:2px 8px; border-radius:20px; }
+  .changed-tag { display:inline-block; font-size:10px; background:rgba(232,255,71,0.08); color:var(--accent); padding:2px 8px; border-radius:20px; margin-left:6px; border:1px solid rgba(232,255,71,0.15); }
+  .exo-stats { display:grid; grid-template-columns:1fr 1fr 1fr; border-top:1px solid var(--border); }
+  .stat-cell { padding:12px 14px; border-right:1px solid var(--border); display:flex; flex-direction:column; gap:2px; }
+  .stat-cell:last-child { border-right:none; }
+  .stat-label { font-family:'DM Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .stat-value { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--accent); line-height:1; }
+  .stat-sub { font-size:10px; color:var(--muted); }
+  .exo-tip { padding:10px 16px; font-size:12px; color:#888; line-height:1.5; font-style:italic; border-top:1px solid var(--border); background:rgba(255,255,255,0.02); }
+
+  /* ── LOG WEIGHT ZONE ── */
+  .log-zone {
+    border-top:1px solid var(--border);
+    padding:12px 16px;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    background:rgba(232,255,71,0.03);
+  }
+  .log-zone label { font-family:'DM Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px; flex-shrink:0; }
+  .log-input {
+    background:var(--bg); border:1px solid rgba(232,255,71,0.25); border-radius:8px;
+    color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;
+    padding:6px 12px; width:90px; text-align:center; outline:none;
+  }
+  .log-input:focus { border-color:var(--accent); }
+  .log-unit { font-size:12px; color:var(--muted); margin-left:-6px; }
+  .log-btn {
+    background:var(--accent); color:#000; border:none; border-radius:8px;
+    font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:1px;
+    padding:7px 14px; cursor:pointer; flex-shrink:0;
+  }
+  .log-btn:active { opacity:0.7; }
+  .log-history { width:100%; display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; }
+  .log-chip {
+    font-family:'DM Mono',monospace; font-size:10px; padding:3px 8px;
+    border-radius:10px; background:rgba(255,255,255,0.05); color:#aaa;
+    border:1px solid var(--border); display:flex; align-items:center; gap:5px;
+  }
+  .log-chip.latest { background:rgba(232,255,71,0.08); color:var(--accent); border-color:rgba(232,255,71,0.2); }
+  .log-chip-del { cursor:pointer; color:var(--muted); font-size:12px; line-height:1; }
+  .log-chip-del:hover { color:#ff4444; }
+  .pr-badge {
+    font-family:'DM Mono',monospace; font-size:9px; padding:2px 6px; border-radius:8px;
+    background:rgba(255,107,53,0.15); color:var(--push); border:1px solid rgba(255,107,53,0.3);
+    margin-left:4px;
+  }
+
+  /* ── REST DAY ── */
+  .rest-content { text-align:center; padding:48px 20px; }
+  .rest-icon { font-size:64px; margin-bottom:16px; }
+  .rest-title { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--muted); margin-bottom:12px; }
+  .rest-text { font-size:14px; color:var(--muted); line-height:1.6; max-width:280px; margin:0 auto; }
+
+  /* ── PROGRESS PAGE ── */
+  .prog-header { font-family:'Bebas Neue',sans-serif; font-size:24px; margin-bottom:4px; }
+  .prog-sub { font-size:12px; color:var(--muted); margin-bottom:20px; }
+  .prog-summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+  .prog-sum-card { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:14px; text-align:center; }
+  .prog-sum-val { font-family:'Bebas Neue',sans-serif; font-size:30px; color:var(--accent); line-height:1; }
+  .prog-sum-lbl { font-size:10px; color:var(--muted); margin-top:2px; text-transform:uppercase; letter-spacing:1px; font-family:'DM Mono',monospace; }
+
+  .prog-session-block { margin-bottom:20px; }
+  .prog-session-title {
+    font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1px;
+    padding:8px 12px; border-radius:8px; margin-bottom:8px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .prog-session-push { background:rgba(255,107,53,0.1); color:var(--push); }
+  .prog-session-pull { background:rgba(71,179,255,0.1); color:var(--pull); }
+  .prog-session-legs { background:rgba(180,123,255,0.1); color:var(--legs); }
+
+  .prog-row {
+    background:var(--bg2); border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; margin-bottom:6px; display:flex; align-items:center; gap:12px;
+  }
+  .prog-row-name { font-size:13px; font-weight:600; flex:1; line-height:1.3; }
+  .prog-row-right { text-align:right; flex-shrink:0; }
+  .prog-max { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--accent); line-height:1; }
+  .prog-max-lbl { font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:1px; font-family:'DM Mono',monospace; }
+  .prog-delta { font-family:'DM Mono',monospace; font-size:10px; margin-top:2px; }
+  .prog-delta.up { color:var(--green); }
+  .prog-delta.zero { color:var(--muted); }
+
+  .mini-chart { display:flex; align-items:flex-end; gap:2px; height:28px; margin-top:6px; }
+  .mini-bar { flex:1; border-radius:2px 2px 0 0; min-height:3px; background:rgba(232,255,71,0.15); transition:all 0.3s; }
+  .mini-bar.last { background:var(--accent); }
+
+  .empty-prog { text-align:center; padding:40px 20px; color:var(--muted); font-size:13px; line-height:1.6; }
+  .empty-prog .empty-icon { font-size:48px; margin-bottom:12px; }
+
+  .reset-btn {
+    display:block; width:100%; margin-top:20px;
+    background:transparent; border:1px solid rgba(255,70,70,0.3); color:#ff4444;
+    border-radius:10px; padding:12px; font-family:'DM Mono',monospace;
+    font-size:11px; letter-spacing:1px; cursor:pointer; text-align:center;
+  }
+  .reset-btn:active { opacity:0.7; }
+
+  /* ── NUTRITION ── */
+  .macro-banner { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:16px; }
+  .macro-cell { background:var(--bg2); padding:12px 10px; text-align:center; }
+  .macro-val { font-family:'Bebas Neue',sans-serif; font-size:22px; }
+  .macro-lbl { font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-top:1px; }
+  .c-kcal{color:var(--accent);} .c-prot{color:var(--green);} .c-carb{color:var(--pull);} .c-fat{color:var(--push);}
+  .meal-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:16px; margin-bottom:12px; }
+  .meal-time-label { font-family:'DM Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:4px; }
+  .meal-title-big { font-family:'Bebas Neue',sans-serif; font-size:22px; margin-bottom:12px; }
+  .meal-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:13px; gap:8px; }
+  .meal-row:last-child { border-bottom:none; }
+  .meal-row-left { color:#ccc; flex:1; }
+  .meal-pill { font-family:'DM Mono',monospace; font-size:10px; padding:2px 8px; border-radius:10px; background:rgba(232,255,71,0.08); color:var(--accent); flex-shrink:0; }
+  .meal-pill.p { background:rgba(71,255,179,0.08); color:var(--green); }
+  .meal-pill.c { background:rgba(71,179,255,0.08); color:var(--pull); }
+  .meal-pill.f { background:rgba(255,107,53,0.08); color:var(--push); }
+
+  /* ── TIPS ── */
+  .info-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:16px; margin-bottom:12px; }
+  .info-card h3 { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent); margin-bottom:8px; }
+  .info-card p { font-size:13px; color:#aaa; line-height:1.65; }
+  .section-title-page { font-family:'Bebas Neue',sans-serif; font-size:24px; margin-bottom:14px; }
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav {
+    position:fixed; bottom:0; left:0; right:0;
+    background:rgba(15,15,15,0.97); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border-top:1px solid var(--border);
+    display:flex; padding:8px 0 calc(8px + var(--safe-bottom)); z-index:200;
+  }
+  .nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:6px 4px; cursor:pointer; border:none; background:none; color:var(--muted); transition:color .2s; }
+  .nav-btn.active { color:var(--accent); }
+  .nav-icon { font-size:20px; }
+  .nav-label { font-size:9px; letter-spacing:.5px; text-transform:uppercase; font-family:'DM Mono',monospace; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-label">PPL × 2 · 62 kg · 175 cm</div>
+  <div class="top-title">MON PROGRAMME <span class="top-badge">V3</span></div>
+  <div class="day-scroll-wrap">
+    <div class="day-pill active-push" onclick="showDay('push-a')"><span class="pill-day">SAM</span><span class="pill-type">PUSH A</span></div>
+    <div class="day-pill active-pull" onclick="showDay('pull-a')"><span class="pill-day">DIM</span><span class="pill-type">PULL A</span></div>
+    <div class="day-pill active-legs" onclick="showDay('legs-a')"><span class="pill-day">LUN</span><span class="pill-type">LEGS A</span></div>
+    <div class="day-pill active-rest" onclick="showDay('rest')"><span class="pill-day">MAR</span><span class="pill-type">REPOS</span></div>
+    <div class="day-pill active-push" onclick="showDay('push-b')"><span class="pill-day">MER</span><span class="pill-type">PUSH B</span></div>
+    <div class="day-pill active-pull" onclick="showDay('pull-b')"><span class="pill-day">JEU</span><span class="pill-type">PULL B</span></div>
+    <div class="day-pill active-legs" onclick="showDay('legs-b')"><span class="pill-day">VEN</span><span class="pill-type">LEGS B</span></div>
+  </div>
+</div>
+
+<!-- ═══ PAGE SÉANCES ═══ -->
+<div id="page-workout" class="page active">
+
+<!-- PUSH A -->
+<div id="day-push-a" class="day-view">
+  <div class="page-header ph-push">
+    <div class="ph-left"><div class="ph-tag push-col">Samedi · Push A</div><div class="ph-title">PECS · ÉPAULES<br>TRICEPS</div><div class="ph-sub">6 exercices · ~55 min</div></div>
+    <div class="ph-right push-col">A</div>
+  </div>
+  <!-- exos -->
+  <div class="exo-card">
+    <div class="exo-top"><div class="exo-num">01 / 06</div><div class="exo-name">Développé couché — Smith Machine</div><span class="exo-tag">Pecs</span></div>
+    <div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">8–10</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">40kg</span><span class="stat-sub">barre ~15kg incl.</span></div></div>
+    <div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2–3 min</span></div></div>
+    <div class="exo-tip">💡 Barre à hauteur des yeux, descente jusqu'au sternum. Serre les pecs au sommet.</div>
+    <div class="log-zone" id="log-push-a-0"></div>
+  </div>
+  <div class="exo-card">
+    <div class="exo-top"><div class="exo-num">02 / 06</div><div class="exo-name">Développé incliné — Smith Machine</div><span class="exo-tag">Pecs haut</span><span class="changed-tag">↑ modifié</span></div>
+    <div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">30kg</span><span class="stat-sub">angle 30–45°</span></div></div>
+    <div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div>
+    <div class="exo-tip">💡 Règle l'inclinaison du banc à 30–45°. Trajet guidé = 0 marge d'erreur.</div>
+    <div class="log-zone" id="log-push-a-1"></div>
+  </div>
+  <div class="exo-card">
+    <div class="exo-top"><div class="exo-num">03 / 06</div><div class="exo-name">Écartés à la poulie (câbles croisés)</div><span class="exo-tag">Pecs</span></div>
+    <div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">12kg</span><span class="stat-sub">par côté</span></div></div>
+    <div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div>
+    <div class="exo-tip">💡 Bras légèrement fléchis. Mouvement en arc. Tension constante sur les pecs.</div>
+    <div class="log-zone" id="log-push-a-2"></div>
+  </div>
+  <div class="exo-card">
+    <div class="exo-top"><div class="exo-num">04 / 06</div><div class="exo-name">Développé militaire — Machine</div><span class="exo-tag">Épaules</span></div>
+    <div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">35kg</span></div></div>
+    <div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div>
+    <div class="exo-tip">💡 Dos plaqué contre le dossier. Pousse jusqu'à l'extension sans verrouiller.</div>
+    <div class="log-zone" id="log-push-a-3"></div>
+  </div>
+  <div class="exo-card">
+    <div class="exo-top"><div class="exo-num">05 / 06</div><div class="exo-name">Élévations latérales — Haltères</div><span class="exo-tag">Deltoïde latéral</span></div>
+    <div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">15–20</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">8kg</span><span class="stat-sub">par haltère</span></div></div>
+    <div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div>
+    <div class="exo-tip">💡 Petit pouce vers le bas. Montée lente jusqu'à hauteur des épaules.</div>
+    <div class="log-zone" id="log-push-a-4"></div>
+  </div>
+  <div class="exo-card">
+    <div class="exo-top"><div class="exo-num">06 / 06</div><div class="exo-name">Pushdown triceps — Poulie (corde)</div><span class="exo-tag">Triceps</span></div>
+    <div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">20kg</span></div></div>
+    <div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div>
+    <div class="exo-tip">💡 Coudes collés aux flancs. Écarte les mains en bas pour maximiser la contraction.</div>
+    <div class="log-zone" id="log-push-a-5"></div>
+  </div>
+</div>
+
+<!-- PULL A -->
+<div id="day-pull-a" class="day-view" style="display:none">
+  <div class="page-header ph-pull"><div class="ph-left"><div class="ph-tag pull-col">Dimanche · Pull A</div><div class="ph-title">DOS · BICEPS<br>TRAPÈZE</div><div class="ph-sub">6 exercices · ~55 min</div></div><div class="ph-right pull-col">A</div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">01 / 06</div><div class="exo-name">Tirage horizontal — Machine</div><span class="exo-tag">Dos large</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">8–10</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">45kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2–3 min</span></div></div><div class="exo-tip">💡 Poitrine contre le support. Tire vers le nombril. Omoplate se rapproche en fin.</div><div class="log-zone" id="log-pull-a-0"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">02 / 06</div><div class="exo-name">Tirage poulie haute — Prise large</div><span class="exo-tag">Grand dorsal</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">45kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div><div class="exo-tip">💡 Barre vers le haut de la poitrine. Pense à "ramener tes coudes dans tes poches".</div><div class="log-zone" id="log-pull-a-1"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">03 / 06</div><div class="exo-name">Rowing haltère unilatéral</div><span class="exo-tag">Dos moyen</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">22kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Genou + main sur le banc. Tire le coude vers le plafond. Très stable.</div><div class="log-zone" id="log-pull-a-2"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">04 / 06</div><div class="exo-name">Shrugs — Haltères</div><span class="exo-tag">Trapèze</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">24kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Mouvement vertical pur. Pas de rotation. Pause 1 sec en haut.</div><div class="log-zone" id="log-pull-a-3"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">05 / 06</div><div class="exo-name">Curl biceps — Machine</div><span class="exo-tag">Biceps</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">30kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Contraction complète en haut. Descente lente 2 sec.</div><div class="log-zone" id="log-pull-a-4"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">06 / 06</div><div class="exo-name">Curl marteau — Haltères</div><span class="exo-tag">Biceps · Brachialis</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">14kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Prise neutre. Alterne les bras. Donne de l'épaisseur au bras.</div><div class="log-zone" id="log-pull-a-5"></div></div>
+</div>
+
+<!-- LEGS A -->
+<div id="day-legs-a" class="day-view" style="display:none">
+  <div class="page-header ph-legs"><div class="ph-left"><div class="ph-tag legs-col">Lundi · Legs A</div><div class="ph-title">CUISSES · MOLLETS<br>ABDOS</div><div class="ph-sub">7 exercices · ~60 min</div></div><div class="ph-right legs-col">A</div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">01 / 07</div><div class="exo-name">Presse à cuisses — Leg Press</div><span class="exo-tag">Quadriceps · Ischio · Fessiers</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">70kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2–3 min</span></div></div><div class="exo-tip">💡 Dos calé, pieds à largeur d'épaules. Descente à 90°. Pousse avec les talons.</div><div class="log-zone" id="log-legs-a-0"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">02 / 07</div><div class="exo-name">Leg Extension — Machine</div><span class="exo-tag">Quadriceps</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">35kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Extension complète + 1 sec contraction. Descente sur 2 sec.</div><div class="log-zone" id="log-legs-a-1"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">03 / 07</div><div class="exo-name">Leg Curl allongé — Machine</div><span class="exo-tag">Ischio-jambiers</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">35kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Hanche plaquée sur la machine. Tempo 2–1–2.</div><div class="log-zone" id="log-legs-a-2"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">04 / 07</div><div class="exo-name">Hip Thrust — Smith Machine</div><span class="exo-tag">Fessiers · Ischio</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">40kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div><div class="exo-tip">💡 Épaules sur banc, barre sur les hanches (serviette). Contracte les fessiers 1 sec en haut.</div><div class="log-zone" id="log-legs-a-3"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">05 / 07</div><div class="exo-name">Mollets debout — Machine</div><span class="exo-tag">Mollets</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">15–20</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">50kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Amplitude complète. Talon en dessous de la marche. Tempo 2–2–2.</div><div class="log-zone" id="log-legs-a-4"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">06 / 07</div><div class="exo-name">Crunch à la poulie haute — Corde</div><span class="exo-tag">Abdominaux</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">15–20</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">15kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 À genoux. Corde derrière la nuque. Flexion du tronc vers le bas.</div><div class="log-zone" id="log-legs-a-5"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">07 / 07</div><div class="exo-name">Planche (Plank)</div><span class="exo-tag">Abdos profonds · Gainage</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Durée</span><span class="stat-value">45s</span><span class="stat-sub">→ 60s objectif</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">PDC</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">60 sec</span></div></div><div class="exo-tip">💡 Corps en ligne droite. Respire lentement. +5 sec chaque semaine.</div><div class="log-zone" id="log-legs-a-6"></div></div>
+</div>
+
+<!-- REST -->
+<div id="day-rest" class="day-view" style="display:none">
+  <div class="page-header ph-rest"><div class="ph-left"><div class="ph-tag rest-col">Mardi · Repos</div><div class="ph-title">RÉCUPÉRATION<br>ACTIVE</div><div class="ph-sub">Le muscle pousse pendant le repos</div></div><div class="ph-right rest-col">R</div></div>
+  <div class="rest-content"><div class="rest-icon">😴</div><div class="rest-title">REPOS COMPLET</div><div class="rest-text">C'est aujourd'hui que le muscle se reconstruit et grossit. Mange tes protéines, bois de l'eau, dors 7–9h.<br><br>Marche légère ou étirements 15 min acceptés.</div></div>
+</div>
+
+<!-- PUSH B -->
+<div id="day-push-b" class="day-view" style="display:none">
+  <div class="page-header ph-push"><div class="ph-left"><div class="ph-tag push-col">Mercredi · Push B</div><div class="ph-title">PECS · ÉPAULES<br>TRICEPS</div><div class="ph-sub">6 exercices · ~55 min · Angles différents</div></div><div class="ph-right push-col">B</div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">01 / 06</div><div class="exo-name">Développé couché — Chest Press Machine</div><span class="exo-tag">Pecs</span><span class="changed-tag">↑ modifié</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">8–10</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">45kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2–3 min</span></div></div><div class="exo-tip">💡 Trajet fixe = charge lourde en sécurité. Contraction forte en fin de mouvement.</div><div class="log-zone" id="log-push-b-0"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">02 / 06</div><div class="exo-name">Pec Deck / Butterfly Machine</div><span class="exo-tag">Pecs</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">35kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Contraction forte quand les bras se rejoignent. Descente contrôlée.</div><div class="log-zone" id="log-push-b-1"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">03 / 06</div><div class="exo-name">Dips — Machine assistée</div><span class="exo-tag">Triceps · Pecs bas</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Assist.</span><span class="stat-value">20kg</span><span class="stat-sub">contrepoids</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div><div class="exo-tip">💡 Buste penché = pecs. Buste droit = triceps. Réduire l'assistance au fil du temps.</div><div class="log-zone" id="log-push-b-2"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">04 / 06</div><div class="exo-name">Face Pull — Poulie (corde)</div><span class="exo-tag">Deltoïde postérieur · Coiffe</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">15–20</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">12kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Poulie à hauteur des yeux. Tire vers le visage en écartant les mains. Essentiel pour la santé des épaules.</div><div class="log-zone" id="log-push-b-3"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">05 / 06</div><div class="exo-name">Élévations frontales — Poulie basse</div><span class="exo-tag">Deltoïde antérieur</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">8kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Tension constante. Bras légèrement fléchi. Montée jusqu'à hauteur des épaules.</div><div class="log-zone" id="log-push-b-4"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">06 / 06</div><div class="exo-name">Skullcrusher — Barre EZ</div><span class="exo-tag">Triceps longue portion</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">20kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Coudes fixes pointés vers le plafond. Descend la barre vers le front. Contrôle absolu.</div><div class="log-zone" id="log-push-b-5"></div></div>
+</div>
+
+<!-- PULL B -->
+<div id="day-pull-b" class="day-view" style="display:none">
+  <div class="page-header ph-pull"><div class="ph-left"><div class="ph-tag pull-col">Jeudi · Pull B</div><div class="ph-title">DOS · BICEPS<br>TRAPÈZE</div><div class="ph-sub">6 exercices · ~55 min · Angles différents</div></div><div class="ph-right pull-col">B</div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">01 / 06</div><div class="exo-name">Tirage poulie haute — Prise neutre serrée</div><span class="exo-tag">Dos · Grand rond</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">8–10</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">50kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2–3 min</span></div></div><div class="exo-tip">💡 Prise parallèle. Tire vers le sternum, coudes vers les hanches.</div><div class="log-zone" id="log-pull-b-0"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">02 / 06</div><div class="exo-name">Rowing — Machine (chest supported)</div><span class="exo-tag">Dos moyen · Rhomboïdes</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">45kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div><div class="exo-tip">💡 Poitrine appuyée = dos protégé. Serre les omoplates en fin de mouvement.</div><div class="log-zone" id="log-pull-b-1"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">03 / 06</div><div class="exo-name">Rowing poulie basse assis</div><span class="exo-tag">Grand dorsal</span><span class="changed-tag">↑ modifié</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">40kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Assis droit, pieds sur les repose-pieds, buste stable. Tire vers le nombril. Dos 100% stabilisé.</div><div class="log-zone" id="log-pull-b-2"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">04 / 06</div><div class="exo-name">Shrugs — Smith Machine</div><span class="exo-tag">Trapèze</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">60kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Plus lourd qu'aux haltères. Vertical pur, pas de rotation des épaules.</div><div class="log-zone" id="log-pull-b-3"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">05 / 06</div><div class="exo-name">Curl — Barre EZ</div><span class="exo-tag">Biceps</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">25kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Prise semi-supination. Coudes fixes contre le corps.</div><div class="log-zone" id="log-pull-b-4"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">06 / 06</div><div class="exo-name">Curl concentration — Haltère</div><span class="exo-tag">Biceps (pic)</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">12kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Coude sur cuisse intérieure. Supination maximale en haut. Isolation totale.</div><div class="log-zone" id="log-pull-b-5"></div></div>
+</div>
+
+<!-- LEGS B -->
+<div id="day-legs-b" class="day-view" style="display:none">
+  <div class="page-header ph-legs"><div class="ph-left"><div class="ph-tag legs-col">Vendredi · Legs B</div><div class="ph-title">CUISSES · MOLLETS<br>ABDOS</div><div class="ph-sub">7 exercices · ~60 min · Focus ischio + fessiers</div></div><div class="ph-right legs-col">B</div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">01 / 07</div><div class="exo-name">Hack Squat — Machine</div><span class="exo-tag">Quadriceps · Fessiers</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">50kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2–3 min</span></div></div><div class="exo-tip">💡 Dos calé. Descente lente. Genoux dans l'axe. Aucune douleur au dos garantie.</div><div class="log-zone" id="log-legs-b-0"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">02 / 07</div><div class="exo-name">Fentes statiques — Smith Machine</div><span class="exo-tag">Quadriceps · Fessiers</span><span class="changed-tag">↑ modifié</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10/jambe</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">20kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div><div class="exo-tip">💡 Un pied devant, un derrière. Toute la série sur une jambe avant de changer. 0 problème d'équilibre.</div><div class="log-zone" id="log-legs-b-1"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">03 / 07</div><div class="exo-name">Romanian Deadlift haltères (RDL)</div><span class="exo-tag">Ischio-jambiers · Fessiers</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">10–12</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">18kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">2 min</span></div></div><div class="exo-tip">💡 Haltères le long des jambes. Dos droit. Genoux quasi tendus. Sens l'étirement des ischio.</div><div class="log-zone" id="log-legs-b-2"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">04 / 07</div><div class="exo-name">Leg Press pieds hauts — Fessiers</div><span class="exo-tag">Fessiers · Ischio</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">60kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Pieds en haut de la plateforme = fessiers +++. Même machine, placement différent.</div><div class="log-zone" id="log-legs-b-3"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">05 / 07</div><div class="exo-name">Mollets assis — Machine</div><span class="exo-tag">Soléaire · Mollets</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">4</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">15–20</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">30kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Genou fléchi = soléaire activé. Muscle différent des mollets debout.</div><div class="log-zone" id="log-legs-b-4"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">06 / 07</div><div class="exo-name">Relevé de jambes — Suspendu</div><span class="exo-tag">Abdos bas · Iliopsoas</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">12–15</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">PDC</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">90 sec</span></div></div><div class="exo-tip">💡 Jambes à 90°. Pas d'élan. Si difficile : genoux pliés.</div><div class="log-zone" id="log-legs-b-5"></div></div>
+  <div class="exo-card"><div class="exo-top"><div class="exo-num">07 / 07</div><div class="exo-name">Russian Twist — Avec disque</div><span class="exo-tag">Obliques</span></div><div class="exo-stats"><div class="stat-cell"><span class="stat-label">Séries</span><span class="stat-value">3</span></div><div class="stat-cell"><span class="stat-label">Reps</span><span class="stat-value">20 tot.</span></div><div class="stat-cell"><span class="stat-label">Charge</span><span class="stat-value">5kg</span></div></div><div class="exo-stats" style="border-top:1px solid var(--border)"><div class="stat-cell" style="grid-column:span 3"><span class="stat-label">Repos</span><span class="stat-value" style="font-size:16px">60 sec</span></div></div><div class="exo-tip">💡 Dos à 45°. Pieds levés. Rotation lente gauche/droite = 1 rep.</div><div class="log-zone" id="log-legs-b-6"></div></div>
+</div>
+</div><!-- end page-workout -->
+
+<!-- ═══ PAGE PROGRESSION ═══ -->
+<div id="page-prog" class="page" style="display:none">
+  <div class="prog-header">📊 PROGRESSION</div>
+  <div class="prog-sub">Toutes tes charges enregistrées séance par séance.</div>
+  <div class="prog-summary">
+    <div class="prog-sum-card"><div class="prog-sum-val" id="sum-total">—</div><div class="prog-sum-lbl">Entrées loggées</div></div>
+    <div class="prog-sum-card"><div class="prog-sum-val" id="sum-exos">—</div><div class="prog-sum-lbl">Exercices suivis</div></div>
+  </div>
+  <div id="prog-content"></div>
+  <button class="reset-btn" onclick="confirmReset()">🗑 Effacer toutes les données</button>
+</div>
+
+<!-- ═══ PAGE NUTRITION ═══ -->
+<div id="page-nutrition" class="page" style="display:none">
+  <div class="section-title-page">🥗 NUTRITION</div>
+  <div class="macro-banner">
+    <div class="macro-cell"><div class="macro-val c-kcal">2500</div><div class="macro-lbl">kcal</div></div>
+    <div class="macro-cell"><div class="macro-val c-prot">140g</div><div class="macro-lbl">protéines</div></div>
+    <div class="macro-cell"><div class="macro-val c-carb">290g</div><div class="macro-lbl">glucides</div></div>
+    <div class="macro-cell"><div class="macro-val c-fat">70g</div><div class="macro-lbl">lipides</div></div>
+  </div>
+  <div class="meal-card"><div class="meal-time-label">06h30 · Avant salle</div><div class="meal-title-big">PETIT-DÉJEUNER</div><div class="meal-row"><span class="meal-row-left">3 œufs entiers</span><span class="meal-pill p">21g P</span></div><div class="meal-row"><span class="meal-row-left">3 tranches pain complet</span><span class="meal-pill c">36g C</span></div><div class="meal-row"><span class="meal-row-left">1 cuil. beurre de cacahuète</span><span class="meal-pill f">8g L</span></div><div class="meal-row"><span class="meal-row-left">→ Ajouter : Yaourt grec 0%</span><span class="meal-pill p">+10g P</span></div><div class="meal-row"><span class="meal-row-left">Créatine 3–5g dans l'eau</span><span class="meal-pill">✓</span></div></div>
+  <div class="meal-card"><div class="meal-time-label">12h30 · Déjeuner</div><div class="meal-title-big">MIDI</div><div class="meal-row"><span class="meal-row-left">Riz basmati 120g (sec)</span><span class="meal-pill c">92g C</span></div><div class="meal-row"><span class="meal-row-left">Poulet émincé 200g</span><span class="meal-pill p">44g P</span></div><div class="meal-row"><span class="meal-row-left">Légumes à volonté</span><span class="meal-pill">fibres</span></div><div class="meal-row"><span class="meal-row-left">Huile d'olive 1 cuil.</span><span class="meal-pill f">10g L</span></div></div>
+  <div class="meal-card"><div class="meal-time-label">16h00 · Collation</div><div class="meal-title-big">SMOOTHIE</div><div class="meal-row"><span class="meal-row-left">Flocons d'avoine 80g</span><span class="meal-pill c">55g C</span></div><div class="meal-row"><span class="meal-row-left">Whey (1 scoop)</span><span class="meal-pill p">25g P</span></div><div class="meal-row"><span class="meal-row-left">Banane ou ½ avocat</span><span class="meal-pill c">glucides</span></div><div class="meal-row"><span class="meal-row-left">Lait demi-écrémé 300ml</span><span class="meal-pill p">11g P</span></div><div class="meal-row"><span class="meal-row-left">Mix de graines 20g</span><span class="meal-pill f">oméga-3</span></div></div>
+  <div class="meal-card"><div class="meal-time-label">19h30 · Dîner</div><div class="meal-title-big">SOIR</div><div class="meal-row"><span class="meal-row-left">Poulet / bœuf haché / thon</span><span class="meal-pill p">35g P</span></div><div class="meal-row"><span class="meal-row-left">Pâtes ou riz 100g (sec)</span><span class="meal-pill c">70g C</span></div><div class="meal-row"><span class="meal-row-left">Légumes cuits</span><span class="meal-pill">fibres</span></div><div class="meal-row"><span class="meal-row-left">→ Ajouter : Cottage cheese</span><span class="meal-pill p">+14g P lent</span></div></div>
+  <div class="info-card" style="border-color:rgba(71,255,179,0.2);background:rgba(71,255,179,0.04)"><h3>💡 La clé pour les abdos</h3><p>La graisse abdominale ne disparaît pas avec les exercices abdos. C'est le léger déficit calorique + protéines élevées + progression à l'entraînement qui vont la faire fondre. Les abdos tu les as déjà — il faut juste enlever la couche.</p></div>
+</div>
+
+<!-- ═══ PAGE CONSEILS ═══ -->
+<div id="page-tips" class="page" style="display:none">
+  <div class="section-title-page">⚡ RÈGLES D'OR</div>
+  <div class="info-card"><h3>📈 Surcharge Progressive</h3><p>Règle n°1. Ajoute +2.5 kg ou +1–2 reps chaque semaine. Note tes charges dans l'onglet 📊. Sans progression, pas de masse.</p></div>
+  <div class="info-card"><h3>😴 Sommeil = Croissance</h3><p>Testostérone et hormone de croissance sécrétées la nuit. 7–9h obligatoires. En dessous de 6h : pas de croissance possible.</p></div>
+  <div class="info-card"><h3>💧 Hydratation</h3><p>2,5–3L d'eau / jour. La créatine tire de l'eau dans les muscles : bois encore plus. La déshydratation réduit la force de 10–15%.</p></div>
+  <div class="info-card"><h3>⏱️ Respecte les temps de repos</h3><p>Exercices lourds : 2–3 min. Isolations : 60–90 sec. Utilise un chrono. C'est là que la phosphocréatine se reconstitue.</p></div>
+  <div class="info-card"><h3>🦵 Bas du corps : patience</h3><p>La génétique fixe la forme des mollets, pas leur volume. 2x/semaine sur leg press + hack squat. 6 mois pour voir. Sois constant.</p></div>
+  <div class="info-card"><h3>🔄 Décharge toutes les 8–10 semaines</h3><p>Une semaine à 60% des charges. Le corps récupère, les tendons se reposent. Sans décharge, le plateau arrive vite.</p></div>
+  <div class="info-card" style="border-color:rgba(232,255,71,0.2);background:rgba(232,255,71,0.04)"><h3>📅 Timeline réaliste</h3><p><b style="color:#f0f0f0">Mois 1–2 :</b> muscle memory, forces qui remontent.<br><b style="color:#f0f0f0">Mois 3–4 :</b> épaisseur visible.<br><b style="color:#f0f0f0">Mois 5–6 :</b> transformation visible, abdos définis si nutrition tenue.<br><b style="color:#f0f0f0">An 1 :</b> 68–70 kg possible.</p></div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="nav-btn active" id="nav-workout" onclick="showSection('workout')"><span class="nav-icon">🏋️</span><span class="nav-label">Séances</span></button>
+  <button class="nav-btn" id="nav-prog" onclick="showSection('prog')"><span class="nav-icon">📊</span><span class="nav-label">Progrès</span></button>
+  <button class="nav-btn" id="nav-nutrition" onclick="showSection('nutrition')"><span class="nav-icon">🥗</span><span class="nav-label">Nutrition</span></button>
+  <button class="nav-btn" id="nav-tips" onclick="showSection('tips')"><span class="nav-icon">⚡</span><span class="nav-label">Conseils</span></button>
+</nav>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────
+const EXO_MAP = {
+  'push-a': ['Dév. couché Smith','Dév. incliné Smith','Écartés poulie','Dév. militaire Machine','Élév. latérales','Pushdown triceps'],
+  'pull-a': ['Tirage horizontal','Poulie haute large','Rowing haltère','Shrugs haltères','Curl Machine','Curl marteau'],
+  'legs-a': ['Leg Press','Leg Extension','Leg Curl','Hip Thrust','Mollets debout','Crunch poulie','Planche'],
+  'push-b': ['Chest Press Machine','Pec Deck','Dips assistée','Face Pull','Élév. frontales','Skullcrusher'],
+  'pull-b': ['Poulie prise neutre','Rowing chest supported','Rowing poulie basse','Shrugs Smith','Curl barre EZ','Curl concentration'],
+  'legs-b': ['Hack Squat','Fentes statiques Smith','RDL haltères','Leg Press fessiers','Mollets assis','Relevé de jambes','Russian Twist'],
+};
+const SESSION_COLORS = {
+  'push-a':'push','push-b':'push',
+  'pull-a':'pull','pull-b':'pull',
+  'legs-a':'legs','legs-b':'legs',
+};
+const SESSION_LABELS = {
+  'push-a':'PUSH A','push-b':'PUSH B',
+  'pull-a':'PULL A','pull-b':'PULL B',
+  'legs-a':'LEGS A','legs-b':'LEGS B',
+};
+
+let currentDay = 'push-a';
+
+// ── STORAGE ──────────────────────────────────────────────────────────
+function getLog() {
+  try { return JSON.parse(localStorage.getItem('ppl_log') || '{}'); }
+  catch(e) { return {}; }
+}
+function saveLog(data) {
+  try { localStorage.setItem('ppl_log', JSON.stringify(data)); }
+  catch(e) {}
+}
+function getKey(session, idx) { return `${session}__${idx}`; }
+
+// ── BUILD LOG ZONES ───────────────────────────────────────────────────
+function buildLogZones() {
+  Object.keys(EXO_MAP).forEach(session => {
+    EXO_MAP[session].forEach((name, idx) => {
+      const el = document.getElementById(`log-${session}-${idx}`);
+      if (!el) return;
+      el.innerHTML = renderLogZone(session, idx, name);
+    });
+  });
+}
+
+function renderLogZone(session, idx, name) {
+  const key = getKey(session, idx);
+  const log = getLog();
+  const entries = log[key] || [];
+  const latest = entries[entries.length - 1];
+  const max = entries.length ? Math.max(...entries.map(e => parseFloat(e.w) || 0)) : null;
+  const isPR = latest && max !== null && parseFloat(latest.w) >= max && entries.length > 1;
+
+  let histHTML = '';
+  const recent = entries.slice(-6);
+  recent.forEach((e, i) => {
+    const isLast = i === recent.length - 1;
+    const prTag = (parseFloat(e.w) >= max && entries.length > 1 && isLast) ? '<span class="pr-badge">PR</span>' : '';
+    histHTML += `<span class="log-chip ${isLast ? 'latest' : ''}">${e.d} · ${e.w}kg${prTag}<span class="log-chip-del" onclick="delEntry('${key}',${entries.indexOf(e)})">×</span></span>`;
+  });
+
+  return `
+    <label>CHARGE UTILISÉE</label>
+    <input class="log-input" type="number" step="0.5" min="0" placeholder="kg" id="inp-${key}">
+    <span class="log-unit">kg</span>
+    <button class="log-btn" onclick="logWeight('${key}','${session}',${idx})">SAVE</button>
+    ${entries.length ? `<div class="log-history">${histHTML}</div>` : ''}
+  `;
+}
+
+function logWeight(key, session, idx) {
+  const inp = document.getElementById(`inp-${key}`);
+  const val = parseFloat(inp.value);
+  if (!val || val <= 0) { inp.style.borderColor = '#ff4444'; setTimeout(() => inp.style.borderColor = 'rgba(232,255,71,0.25)', 1000); return; }
+  const log = getLog();
+  if (!log[key]) log[key] = [];
+  const today = new Date().toLocaleDateString('fr-FR', {day:'2-digit', month:'2-digit'});
+  log[key].push({ d: today, w: val });
+  saveLog(log);
+  inp.value = '';
+  const name = EXO_MAP[session][idx];
+  const el = document.getElementById(`log-${session}-${idx}`);
+  if (el) el.innerHTML = renderLogZone(session, idx, name);
+}
+
+function delEntry(key, entryIdx) {
+  const log = getLog();
+  if (!log[key]) return;
+  log[key].splice(entryIdx, 1);
+  if (log[key].length === 0) delete log[key];
+  saveLog(log);
+  // re-render all zones for this key
+  Object.keys(EXO_MAP).forEach(session => {
+    EXO_MAP[session].forEach((name, idx) => {
+      if (getKey(session, idx) === key) {
+        const el = document.getElementById(`log-${session}-${idx}`);
+        if (el) el.innerHTML = renderLogZone(session, idx, name);
+      }
+    });
+  });
+}
+
+// ── PROGRESSION PAGE ─────────────────────────────────────────────────
+function renderProgPage() {
+  const log = getLog();
+  const keys = Object.keys(log);
+  document.getElementById('sum-total').textContent = keys.reduce((a, k) => a + (log[k]||[]).length, 0);
+  document.getElementById('sum-exos').textContent = keys.length;
+
+  const container = document.getElementById('prog-content');
+  if (keys.length === 0) {
+    container.innerHTML = `<div class="empty-prog"><div class="empty-icon">📋</div>Aucune donnée pour l'instant.<br>Note tes charges dans les séances pour voir ta progression ici.</div>`;
+    return;
+  }
+
+  let html = '';
+  ['push-a','pull-a','legs-a','push-b','pull-b','legs-b'].forEach(session => {
+    const color = SESSION_COLORS[session];
+    const exos = EXO_MAP[session];
+    const hasData = exos.some((_, idx) => (log[getKey(session, idx)] || []).length > 0);
+    if (!hasData) return;
+
+    html += `<div class="prog-session-block">`;
+    html += `<div class="prog-session-title prog-session-${color}">${SESSION_LABELS[session]}</div>`;
+
+    exos.forEach((name, idx) => {
+      const key = getKey(session, idx);
+      const entries = log[key] || [];
+      if (entries.length === 0) return;
+
+      const weights = entries.map(e => parseFloat(e.w) || 0);
+      const maxW = Math.max(...weights);
+      const first = weights[0];
+      const delta = maxW - first;
+      const deltaStr = delta > 0 ? `+${delta.toFixed(1)} kg` : delta === 0 ? '—' : `${delta.toFixed(1)} kg`;
+      const deltaClass = delta > 0 ? 'up' : 'zero';
+
+      // mini chart
+      const chartVals = weights.slice(-8);
+      const chartMax = Math.max(...chartVals);
+      const bars = chartVals.map((v, i) => {
+        const h = chartMax > 0 ? Math.max(3, Math.round((v / chartMax) * 28)) : 3;
+        const isLast = i === chartVals.length - 1;
+        return `<div class="mini-bar ${isLast ? 'last' : ''}" style="height:${h}px"></div>`;
+      }).join('');
+
+      html += `
+        <div class="prog-row">
+          <div style="flex:1">
+            <div class="prog-row-name">${name}</div>
+            <div class="mini-chart">${bars}</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);margin-top:3px">${entries.length} entrée${entries.length > 1 ? 's' : ''} · début ${entries[0].d}</div>
+          </div>
+          <div class="prog-row-right">
+            <div class="prog-max">${maxW} kg</div>
+            <div class="prog-max-lbl">meilleure charge</div>
+            <div class="prog-delta ${deltaClass}">${deltaStr}</div>
+          </div>
+        </div>`;
+    });
+    html += `</div>`;
+  });
+
+  container.innerHTML = html || `<div class="empty-prog"><div class="empty-icon">📋</div>Commence à logger tes charges dans les séances.</div>`;
+}
+
+function confirmReset() {
+  if (confirm('Effacer toutes les données de progression ?')) {
+    localStorage.removeItem('ppl_log');
+    buildLogZones();
+    renderProgPage();
+  }
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────
+function showSection(section) {
+  document.querySelectorAll('.page').forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+  const map = { workout:'page-workout', prog:'page-prog', nutrition:'page-nutrition', tips:'page-tips' };
+  const page = document.getElementById(map[section]);
+  if (page) { page.style.display = 'block'; page.classList.add('active'); }
+  document.getElementById(`nav-${section}`)?.classList.add('active');
+
+  if (section === 'workout') showDay(currentDay);
+  if (section === 'prog') renderProgPage();
+  window.scrollTo(0, 0);
+}
+
+function showDay(dayId) {
+  currentDay = dayId;
+  document.querySelectorAll('.day-view').forEach(d => d.style.display = 'none');
+  const target = document.getElementById('day-' + dayId);
+  if (target) target.style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+buildLogZones();
+showSection('workout');
+
+// Auto-select today
+const jsDay = new Date().getDay();
+const todayMap = {6:'push-a', 0:'pull-a', 1:'legs-a', 2:'rest', 3:'push-b', 4:'pull-b', 5:'legs-b'};
+if (todayMap[jsDay]) {
+  showDay(todayMap[jsDay]);
+  setTimeout(() => {
+    const pills = document.querySelectorAll('.day-pill');
+    const order = ['push-a','pull-a','legs-a','rest','push-b','pull-b','legs-b'];
+    const idx = order.indexOf(todayMap[jsDay]);
+    if (pills[idx]) pills[idx].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  }, 200);
+}
+</script>
+</body>
+</html>
